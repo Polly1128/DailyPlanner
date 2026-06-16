@@ -27,14 +27,25 @@ A Qoder Agent Skill for scientific daily work planning with Sprint task tracking
 18:00         End of day
 ```
 
-## Available Focus Time
+## Available Time Calculation
 
-| Day Type | Available | Change |
-|----------|-----------|--------|
-| Normal day | 6h | Baseline |
-| Sprint Plan Monday | 5.5h | -0.5h |
-| Sprint Review Thursday | 5h | -1h |
-| Monthly Sharing Wednesday | 4.5h | -1.5h |
+```
+9:00-18:00 = 9h (total at office)
+- Lunch                    = 1h
+= 8h work time
+- Morning standup           = 20min (fixed meeting)
+- Post-standup transition    = 10min (9:20-9:30, switch to work mode)
+- Morning buffer             = 30min (11:30-12:00, wrap-up / rest)
+- Evening standup            = 30min (fixed meeting)
+= 6.5h total available = 6h focus time + 0.5h email window
+```
+
+| Day Type | Focus Time | Total Available | Change from Normal |
+|----------|------------|-----------------|--------------------|
+| Normal day | 6h | 6.5h | Baseline |
+| Sprint Plan Monday | 5h | 5.5h | -1h focus |
+| Sprint Review Thursday | 4.5h | 5h | -1.5h focus |
+| Monthly Sharing Wednesday | 4.5h | 4.5h | -1.5h focus (Silence Time overridden) |
 
 ## Sprint Integration
 
@@ -88,9 +99,9 @@ daily-planner/
 
 | Meeting | Frequency | Time | Impact |
 |---------|-----------|------|--------|
-| Sprint Plan | Biweekly Monday | 15:00-16:00 | Block C -0.5h |
-| Sprint Review+Retro | Biweekly Thursday | 15:00-16:30 | Block C -1.5h |
-| Monthly Sharing | 4th week Wednesday | 13:00-15:00 | Silence Time overridden |
+| Sprint Plan | Biweekly Monday | 15:00-16:00 | Block C -1h focus |
+| Sprint Review+Retro | Biweekly Thursday | 15:00-16:30 | Block C -1.5h focus |
+| Monthly Sharing | 4th week Wednesday | 13:00-15:00 | Silence Time + Email window overridden (-1.5h focus) |
 
 ## Installation
 
