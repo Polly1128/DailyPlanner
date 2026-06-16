@@ -48,6 +48,22 @@ Sprint周期 = 2周, 以下会议为固定不可移动:
 
 ## Available Work Time
 
+### How 6.5h is calculated from 8h workday
+
+```
+9:00-18:00 = 9h (total at office)
+- Lunch    = 1h
+= 8h work time
+- 早会      = 20min (fixed meeting)
+- 早会后过渡 = 10min (9:20-9:30, switch to work mode)
+- 休息缓冲  = 30min (11:30-12:00, wrap-up / rest)
+- 班会      = 30min (fixed meeting)
+= 6.5h total available
+= 6h focus time + 0.5h email window
+```
+
+### Time blocks
+
 | Block | Time | Duration | Character |
 |-------|------|----------|-----------|
 | A | 09:30-11:30 | 2h | 深度专注，大脑最清醒，适合高认知任务 |
