@@ -29,17 +29,18 @@ When Sprint Planning identifies a task >4h, decompose it:
 
 ### Sprint Time Budget
 
-A 2-week Sprint has ~60h total focus capacity (6h × 10 days). But effective Sprint work time is less:
+A 2-week Sprint has 65h total work capacity (6.5h × 10 days). Focus time is 60h (6h × 10 days). Effective Sprint work time:
 
 | Item | Duration | Reason |
 |------|----------|--------|
-| 总容量 | 60h | 6h × 10天 |
-| Sprint Plan会议 | -1h | Week A周一 |
-| Sprint Review会议 | -1.5h | Week B周四 |
-| 月度分享(可能) | -1.5h | 第四周周三 |
+| 总工作容量 | 65h | 6.5h × 10天 |
+| 专注时间容量 | 60h | 6h × 10天 (A+B+C) |
+| Sprint Plan会议 | -1h | Week A周一, 时段C减少 |
+| Sprint Review会议 | -1.5h | Week B周四, 时段C减少 |
+| 月度分享(可能) | -2h | 第四周周三, 覆盖时段B+邮件窗 |
 | 每日留白(buffer) | -5h | 0.5h × 10天 |
-| 每日邮件窗口 | -5h | 0.5h × 10天 |
-| **实际Sprint可用** | **~46h** | |
+| 邮件窗口(非专注) | -5h | 0.5h × 10天, 非Sprint任务时间 |
+| **实际Sprint专注可用** | **~46h** | |
 
 Planning rule: **Total Sprint task estimates should not exceed ~40h** (keep 6h buffer for ad-hoc tasks)
 
