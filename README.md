@@ -1,6 +1,6 @@
 # Daily Planner
 
-A Qoder Agent Skill for scientific daily work planning at Siemens Beijing, with Sprint task tracking and time-blocking methodology.
+A Qoder Agent Skill for scientific daily work planning with Sprint task tracking and time-blocking methodology. Designed for teams running 2-week Sprint cycles with dedicated focus time and recurring meeting patterns.
 
 ## Features
 
