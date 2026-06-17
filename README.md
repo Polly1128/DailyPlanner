@@ -1,130 +1,130 @@
 # Daily Planner
 
-A Qoder Agent Skill for scientific daily work planning with Sprint task tracking and time-blocking methodology. Designed for teams running 2-week Sprint cycles with dedicated focus time and recurring meeting patterns.
+一个基于时间块方法论和 Sprint 任务追踪的科学每日工作规划 Qoder Agent Skill。专为采用2周 Sprint 周期、拥有固定专注时段和周期性会议节奏的团队设计。
 
-## Features
+## 核心功能
 
-- **Time-Blocking Methodology** — Divides each workday into focused time blocks based on cognitive energy levels
-- **Sprint-Daily Integration** — Connects 2-week Sprint goals with daily task execution, providing real-time progress tracking
-- **Eisenhower Matrix** — Prioritizes tasks into P0-P3 levels for optimal allocation
-- **Silence Time Protection** — Guards the team's 13:00-14:30 no-meeting window as a golden deep-work block
-- **Task Rolling Mechanism** — Systematically carries over unfinished tasks with automatic urgency escalation
-- **Sprint Health Monitoring** — Proactively alerts when Sprint progress falls behind time consumption
-- **Special Day Handling** — Automatically adjusts available time for Sprint Plan/Review days and Monthly Sharing days
+- **时间块方法论** — 根据认知能量水平将每个工作日划分为专注时段
+- **Sprint-每日联动** — 将2周 Sprint 目标与每日任务执行打通，提供实时进度追踪
+- **Eisenhower 矩阵** — 按 P0-P3 四级优先级分配任务
+- **Silence Time 保护** — 守护团队 13:00-14:30 的无会议黄金深度工作窗口
+- **任务滚动机制** — 系统化处理未完成任务，自动升级紧迫度
+- **Sprint 健康度监控** — 当 Sprint 进度落后于时间消耗时主动预警
+- **特殊日处理** — 自动调整 Sprint Plan/Review 日和月度分享日的可用时间
 
-## Daily Schedule Template
-
-```
-08:45         Arrive at office
-09:00-09:20   Morning Standup (早会)
-09:30-11:30   Deep Work Block A (2h) — High cognitive tasks
-11:30-12:00   Buffer / Break
-12:00-13:00   Lunch
-13:00-14:30   Deep Work Block B — Silence Time (1.5h) — No meetings
-14:30-15:00   Email/Message Batch Processing
-15:00-17:30   Work Block C (2.5h) — Meetings, collaboration, wrap-up
-17:30-18:00   Evening Standup (班会)
-18:00         End of day
-```
-
-## Available Time Calculation
+## 每日日程模板
 
 ```
-9:00-18:00 = 9h (total at office)
-- Lunch                    = 1h
-= 8h work time
-- Morning standup           = 20min (fixed meeting)
-- Post-standup transition    = 10min (9:20-9:30, switch to work mode)
-- Morning buffer             = 30min (11:30-12:00, wrap-up / rest)
-- Evening standup            = 30min (fixed meeting)
-= 6.5h total available = 6h focus time + 0.5h email window
+08:45         到达办公室
+09:00-09:20   早会 (Morning Standup)
+09:30-11:30   深度工作时段 A (2h) — 高认知任务
+11:30-12:00   休息缓冲
+12:00-13:00   午餐
+13:00-14:30   深度工作时段 B — Silence Time (1.5h) — 无会议
+14:30-15:00   邮件/消息集中处理
+15:00-17:30   工作时段 C (2.5h) — 会议、协作、收尾
+17:30-18:00   班会 (Evening Standup)
+18:00         下班
 ```
 
-| Day Type | Focus Time | Total Available | Change from Normal |
-|----------|------------|-----------------|--------------------|
-| Normal day | 6h | 6.5h | Baseline |
-| Sprint Plan Monday | 5h | 5.5h | -1h focus |
-| Sprint Review Thursday | 4.5h | 5h | -1.5h focus |
-| Monthly Sharing Wednesday | 4.5h | 4.5h | -1.5h focus (Silence Time overridden) |
+## 可用时间计算
 
-## Sprint Integration
+```
+9:00-18:00 = 9小时 (在公司总时长)
+- 午休                  = 1小时
+= 8小时工作时间
+- 早会                  = 20分钟 (固定会议)
+- 早会后过渡             = 10分钟 (9:20-9:30, 切换工作状态)
+- 上午休息缓冲           = 30分钟 (11:30-12:00, 整理/放松)
+- 班会                  = 30分钟 (固定会议)
+= 6.5小时总可用 = 6小时专注时间 + 0.5小时邮件窗口
+```
 
-### Sprint Plan Day (Every 2 Weeks Monday)
+| 日类型 | 专注时间 | 总可用 | 相比正常日变化 |
+|--------|----------|--------|----------------|
+| 正常日 | 6h | 6.5h | 基准 |
+| Sprint Plan 周一 | 5h | 5.5h | 专注 -1h |
+| Sprint Review 周四 | 4.5h | 5h | 专注 -1.5h |
+| 月度分享 周三 | 4.5h | 4.5h | 专注 -1.5h (Silence Time 被覆盖) |
 
-On Sprint Plan day, the agent proactively asks:
-1. What are the core Sprint tasks and their time estimates?
-2. What are the main Sprint goals?
-3. Any unfinished tasks to carry over from last Sprint?
+## Sprint 集成
 
-Then it:
-- Records tasks in `sprint-tasks.md`
-- Decomposes tasks >4h into 2h sub-tasks
-- Distributes tasks across 10 working days
-- Generates a Sprint overview with health assessment
+### Sprint Plan 日（隔周周一）
 
-### Sprint Review Day (Every 2 Weeks Thursday)
+Sprint Plan 日，Agent 会主动询问：
+1. 这个 Sprint 的核心任务有哪些？预估时长是多少？
+2. 这个 Sprint 的主要目标是什么？
+3. 上个 Sprint 有没有未完成需要滚动的任务？
 
-Before the Review meeting, the agent:
-- Summarizes Sprint completion status
-- Flags blocked tasks
-- Identifies carry-over tasks
-- Prepares 3 talking points: Highlights, Blockers, Improvements
+然后会：
+- 将任务记录到 `sprint-tasks.md`
+- 将超过4h的任务拆分为2h子任务
+- 将任务分配到10个工作日
+- 生成 Sprint 概览及健康度评估
 
-### Sprint Health Indicators
+### Sprint Review 日（隔周周四）
 
-| Indicator | Healthy | Warning | Critical |
-|-----------|---------|---------|----------|
-| Completion vs Time % | Done ≥ Time% | Behind 10pp | Behind 20pp |
-| Blocked tasks | 0 | 1 | ≥2 |
-| Rolling tasks | 0-1 | 2-3 | ≥4 |
+Review 会议前，Agent 会：
+- 汇总 Sprint 完成状态
+- 标记阻塞任务及原因
+- 识别需要滚动到下一个 Sprint 的任务
+- 准备3个 Review 发言要点：亮点、阻塞、改进
 
-## Task Prioritization (Eisenhower Matrix)
+### Sprint 健康度指标
 
-| | Urgent | Not Urgent |
+| 指标 | 健康 | 警告 | 危险 |
+|------|------|------|------|
+| 任务完成率 vs 时间消耗 | 完成≥时间% | 落后10个百分点 | 落后20个百分点 |
+| 阻塞任务数 | 0 | 1 | ≥2 |
+| 滚动任务数 | 0-1 | 2-3 | ≥4 |
+
+## 任务优先级（Eisenhower 矩阵）
+
+| | 紧急 | 不紧急 |
 |---|---|---|
-| **Important** | 🔴 P0: Do today | 🟡 P1: Schedule in deep blocks |
-| **Not Important** | 🔵 P2: Batch process | ⚪ P3: Consider dropping |
+| **重要** | 🔴 P0: 今天必须完成 | 🟡 P1: 安排在深度时段 |
+| **不重要** | 🔵 P2: 批量快速处理 | ⚪ P3: 考虑删除 |
 
-## File Structure
+## 文件结构
 
 ```
 daily-planner/
-├── SKILL.md           # Main skill instructions
-├── reference.md       # Detailed methodology reference
-├── sprint-tasks.md    # Current Sprint task tracking
-└── README.md          # This file
+├── SKILL.md           # 主技能指令文件
+├── reference.md       # 详细方法论参考
+├── sprint-tasks.md    # 当前 Sprint 任务追踪 (已被 .gitignore 排除)
+└── README.md          # 本文件
 ```
 
-## Recurring Meetings
+## 周期性会议
 
-| Meeting | Frequency | Time | Impact |
-|---------|-----------|------|--------|
-| Sprint Plan | Biweekly Monday | 15:00-16:00 | Block C -1h focus |
-| Sprint Review+Retro | Biweekly Thursday | 15:00-16:30 | Block C -1.5h focus |
-| Monthly Sharing | 4th week Wednesday | 13:00-15:00 | Silence Time + Email window overridden (-1.5h focus) |
+| 会议 | 频率 | 时间 | 影响 |
+|------|------|------|------|
+| Sprint Plan | 隔周周一 | 15:00-16:00 | 时段C专注 -1h |
+| Sprint Review+Retro | 隔周周四 | 15:00-16:30 | 时段C专注 -1.5h |
+| 月度分享会 | 每月第四周周三 | 13:00-15:00 | Silence Time + 邮件窗口被覆盖 (专注 -1.5h) |
 
-## Installation
+## 安装
 
-Copy this directory to your Qoder skills folder:
+将本目录复制到 Qoder 技能文件夹：
 
 ```
 ~/.qoder/skills/daily-planner/
 ```
 
-## Usage
+## 使用方法
 
-Once installed, simply tell the agent:
+安装后，直接对 Agent 说：
 
-- "帮我规划今天的工作" (Plan my day)
-- "今天任务太多了，帮我安排" (Too many tasks, help me schedule)
-- "规划一下明天" (Plan tomorrow)
+- "帮我规划今天的工作"
+- "今天任务太多了，帮我安排"
+- "规划一下明天"
 
-The agent will automatically:
-1. Check the current Sprint status
-2. Ask for today's tasks
-3. Prioritize and allocate to time blocks
-4. Generate a complete daily schedule with Sprint progress
+Agent 会自动：
+1. 检查当前 Sprint 状态
+2. 询问今日任务
+3. 优先级排序并分配到时间块
+4. 生成包含 Sprint 进度的完整日程表
 
-## License
+## 许可证
 
 MIT
