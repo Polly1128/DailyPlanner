@@ -162,6 +162,25 @@ On Sprint Review Thursday (隔周周四15:00-16:30), before the meeting:
 3. Identify ⏳滚动 tasks that need to carry over to next Sprint
 4. Prepare 3 talking points for the Review: 亮点, 阻塞, 改进
 
+## Date Verification
+
+Before generating any schedule, **ALWAYS confirm today's date and day of week** first. Based on the date, determine if today is a special day that affects available work time:
+
+1. **确认今天日期** — Get current date (YYYY-MM-DD) and day of week
+2. **判断特殊日期** — Check against the following:
+   - Is today a **Sprint Plan Monday**? (隔周周一 15:00-16:00)
+   - Is today a **Sprint Review Thursday**? (隔周周四 15:00-16:30)
+   - Is today a **月度分享 Wednesday**? (每月第四周周三 13:00-15:00)
+   - Is today a **public holiday or PTO**?
+3. **调整基准容量** — If special day detected, adjust available time blocks accordingly (see Sprint日和月度分享日的可用时间变化 table above)
+4. **计算剩余Sprint天数** — If within a Sprint, calculate remaining working days until Sprint Review
+
+**Output date analysis in the schedule header:**
+```markdown
+> 📅 Today is [日期] ([星期X]). Sprint Review in [N] days.
+> ⚠️ Special day detected: [Sprint Plan / Sprint Review / 月度分享 / None]
+```
+
 ## Planning Steps
 
 1. **收集任务** — Ask the user to list today's tasks (or read from a task file)
